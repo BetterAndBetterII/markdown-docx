@@ -4,6 +4,10 @@ import markdownToDocx, { MarkdownDocx } from './index'
 
 vi.mock('docx')
 
+beforeAll(() => {
+  MarkdownDocx.defaultOptions.imageAdapter = async () => null
+})
+
 async function renderTest (markdown: string) {
   const docx = new MarkdownDocx(markdown)
   const rows = await docx.toSection()
