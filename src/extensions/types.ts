@@ -30,3 +30,15 @@ export type FootnoteRef = {
   label: string
 }
 
+export type MathBlock = {
+  type: 'mathBlock'
+  raw: string
+  text: string
+}
+
+export type Math = {
+  type: 'math'
+  raw: string
+  text: string
+}
+

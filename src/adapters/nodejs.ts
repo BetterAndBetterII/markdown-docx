@@ -40,7 +40,7 @@ function loadImage (src: string) {
   if (isHttp(src)) {
     return new Promise<Buffer>((resolve, reject) => {
       const agent = src.startsWith('https') ? https : http
-      agent.get(src, (res) => {
+      const req = agent.get(src, (res) => {
         const chunks: Buffer[] = []
         res.on('data', (chunk) => {
           chunks.push(chunk)
@@ -53,6 +53,9 @@ function loadImage (src: string) {
         res.on('error', (err) => {
           reject(new Error(`Failed to load image: ${err.message || err}`))
         })
+      })
+      req.on('error', (err) => {
+        reject(new Error(`Failed to request image: ${err.message || err}`))
       })
     })
   }

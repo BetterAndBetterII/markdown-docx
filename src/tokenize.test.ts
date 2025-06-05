@@ -147,4 +147,8 @@ Duplicated footnote reference[^second].
   it('parse escape', () => {
     expect(tokenize(`\\*literal asterisks\\*`)).toMatchSnapshot()
   })
+
+  it('parse math', () => {
+    expect(tokenize(`The formula is $E=mc^2$\n\n$$\na^2+b^2=c^2\n$$`)).toMatchSnapshot()
+  })
 })

@@ -4,6 +4,10 @@ import markdownToDocx, { MarkdownDocx } from './index'
 
 vi.mock('docx')
 
+beforeAll(() => {
+  MarkdownDocx.defaultOptions.imageAdapter = async () => null
+})
+
 async function renderTest (markdown: string) {
   const docx = new MarkdownDocx(markdown)
   const rows = await docx.toSection()
@@ -161,5 +165,9 @@ Duplicated footnote reference[^second].
 
   it('render escape', async () => {
     expect(await renderTest(`\\*literal asterisks\\*`)).toMatchSnapshot()
+  })
+
+  it('render math', async () => {
+    expect(await renderTest(`The formula is $E=mc^2$\n\n$$\na^2+b^2=c^2\n$$`)).toMatchSnapshot()
   })
 })

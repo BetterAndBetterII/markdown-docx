@@ -19,6 +19,7 @@ export const classes = {
   Heading4: 'MdHeading4',
   Heading5: 'MdHeading5',
   Heading6: 'MdHeading6',
+  MathBlock: 'MdMathBlock',
 
   // Character styles
   Tag: 'MdTag',
@@ -27,5 +28,6 @@ export const classes = {
   Em: 'MdEm',
   Codespan: 'MdCodespan',
   Del: 'MdDel',
-  Br: 'MdBr'
+  Br: 'MdBr',
+  Math: 'MdMath'
 } as const

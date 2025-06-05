@@ -76,11 +76,11 @@ exports[`render > render horizontal rules 1`] = `
 exports[`render > render images 1`] = `
 "<Paragraph style="MdParagraph"><TextRun>Inline-style:
 </TextRun>
-<ImageRun type="png" transformation-width="104" transformation-height="126" altText-title="Logo Title Text 1" altText-description="alt text" altText-name="alt text"></ImageRun></Paragraph>
+<TextRun>[!alt text](https://img.alicdn.com/imgextra/i3/O1CN012ZjB2y1xHUf6OzZ8C_!!6000000006418-2-tps-104-126.png)</TextRun></Paragraph>
 <Paragraph style="MdSpace"></Paragraph>
 <Paragraph style="MdParagraph"><TextRun>Reference-style:
 </TextRun>
-<ImageRun type="png" transformation-width="104" transformation-height="126" altText-title="Logo Title Text 2" altText-description="alt text" altText-name="alt text"></ImageRun></Paragraph>
+<TextRun>[!alt text](https://img.alicdn.com/imgextra/i3/O1CN012ZjB2y1xHUf6OzZ8C_!!6000000006418-2-tps-104-126.png)</TextRun></Paragraph>
 <Paragraph style="MdSpace"></Paragraph>"
 `;
 
@@ -124,6 +124,12 @@ exports[`render > render list special 1`] = `
 <Paragraph bullet-level="2" style="MdListItem"><TextRun>Ask for feedback</TextRun></Paragraph>"
 `;
 
+exports[`render > render math 1`] = `
+"<Paragraph style="MdParagraph"><TextRun>The formula is $E=mc^2$</TextRun></Paragraph>
+<Paragraph style="MdSpace"></Paragraph>
+<Paragraph style="MdMathBlock">{"rootKey":"m:oMath","root":[{"rootKey":"m:r","root":[{"rootKey":"m:t","root":["a^2+b^2=c^2"]}]}]}</Paragraph>"
+`;
+
 exports[`render > render paragraph 1`] = `
 "<Paragraph style="MdParagraph"><TextRun>Emphasis, aka italics, with </TextRun>
 <TextRun style="MdEm" italics="true">asterisks</TextRun>
@@ -147,9 +153,9 @@ exports[`render > render paragraph 1`] = `
 `;
 
 exports[`render > render tables 1`] = `
-"<Table style="MdTable" width-size="100" width-type="pct" rows="<TableRow tableHeader="true" cantSplit="true"><TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph style="MdTableHeader"><TextRun>Tables</TextRun></Paragraph></TableCell>
-<TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph alignment="center" style="MdTableHeader"><TextRun>Are</TextRun></Paragraph></TableCell>
-<TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph alignment="right" style="MdTableHeader"><TextRun>Cool</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun>col 3 is</TextRun></Paragraph></TableCell>
+"<Table style="MdTable" width-size="100" width-type="pct" rows="<TableRow tableHeader="true" cantSplit="true"><TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph style="MdTableHeader"><TextRun>Tables</TextRun></Paragraph></TableCell>
+<TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph alignment="center" style="MdTableHeader"><TextRun>Are</TextRun></Paragraph></TableCell>
+<TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph alignment="right" style="MdTableHeader"><TextRun>Cool</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun>col 3 is</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph alignment="center" style="MdTableCell"><TextRun>right-aligned</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph alignment="right" style="MdTableCell"><TextRun>$1600</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun>col 2 is</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph alignment="center" style="MdTableCell"><TextRun>centered</TextRun></Paragraph></TableCell>
@@ -159,9 +165,9 @@ exports[`render > render tables 1`] = `
 `;
 
 exports[`render > render tables special 1`] = `
-"<Table style="MdTable" width-size="100" width-type="pct" rows="<TableRow tableHeader="true" cantSplit="true"><TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph style="MdTableHeader"><TextRun>Markdown</TextRun></Paragraph></TableCell>
-<TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph style="MdTableHeader"><TextRun>Less</TextRun></Paragraph></TableCell>
-<TableCell verticalAlign="center" shading-fill="A5A5A5" shading-color="ED7D31"><Paragraph style="MdTableHeader"><TextRun>Pretty</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun style="MdEm" italics="true">Still</TextRun></Paragraph></TableCell>
+"<Table style="MdTable" width-size="100" width-type="pct" rows="<TableRow tableHeader="true" cantSplit="true"><TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph style="MdTableHeader"><TextRun>Markdown</TextRun></Paragraph></TableCell>
+<TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph style="MdTableHeader"><TextRun>Less</TextRun></Paragraph></TableCell>
+<TableCell verticalAlign="center" shading-fill="F1F2F1"><Paragraph style="MdTableHeader"><TextRun>Pretty</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun style="MdEm" italics="true">Still</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun style="MdCode" >renders</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun style="MdStrong" bold="true">nicely</TextRun></Paragraph></TableCell></TableRow>,<TableRow cantSplit="true"><TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun>1</TextRun></Paragraph></TableCell>
 <TableCell verticalAlign="center"><Paragraph style="MdTableCell"><TextRun>2</TextRun></Paragraph></TableCell>
