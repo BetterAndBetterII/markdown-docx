@@ -5,4 +5,5 @@ export * from './render-paragraph'
 export * from './render-list'
 export * from './render-checkbox'
 export * from './render-table'
+export * from './render-math'
 

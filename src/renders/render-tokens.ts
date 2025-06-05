@@ -1,4 +1,4 @@
-import { ExternalHyperlink, FootnoteReferenceRun, ImageRun, ParagraphChild, TextRun } from 'docx'
+import { ExternalHyperlink, FootnoteReferenceRun, ImageRun, ParagraphChild, TextRun, MathRun, Math } from 'docx'
 
 import { MarkdownDocx } from '../MarkdownDocx'
 import { classes } from '../styles'
@@ -78,6 +78,8 @@ function flatInlineToken(render: MarkdownDocx, token: IInlineToken, attr: ITextA
       return renderText(render, token.text, attr)
     case 'image':
       return renderImage(render, token, attr)
+    case 'math':
+      return new Math({ children: [new MathRun(token.text)] })
     case 'footnoteRef':
       return new FootnoteReferenceRun(token.id)
     default:

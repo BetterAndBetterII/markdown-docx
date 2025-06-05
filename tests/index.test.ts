@@ -35,4 +35,12 @@ describe('markdown-docx', () => {
     // check file exists
     expect(fs.existsSync(getFile('./markdown.docx'))).toBe(true)
   })
+
+  it('markdown with math', async () => {
+    const docx = await markdownToDocx(getText('./math.md'))
+    const buffer = await Packer.toBuffer(docx)
+    expect(buffer.length).greaterThan(0)
+    fs.writeFileSync(getFile('./math.docx'), buffer)
+    expect(fs.existsSync(getFile('./math.docx'))).toBe(true)
+  })
 })

@@ -7,6 +7,7 @@ import { IBlockAttr, IBlockToken, IInlineToken } from '../types'
 import { renderList } from './render-list'
 import { renderParagraph } from './render-paragraph'
 import { renderTable } from './render-table'
+import { renderMathBlock } from './render-math'
 
 export function renderBlocks(render: MarkdownDocx, blocks: IBlockToken[], attr: IBlockAttr = {}): FileChild[] {
   const paragraphs: FileChild[] = []
@@ -70,6 +71,8 @@ function renderBlock(render: MarkdownDocx, block: IBlockToken, attr: IBlockAttr)
       })
     case 'table':
       return renderTable(render, block as Tokens.Table, attr)
+    case 'mathBlock':
+      return renderMathBlock(render, block.text, { ...attr, style: classes.MathBlock })
     case 'paragraph':
       return renderParagraph(render, block.tokens as IInlineToken[], {
         style: classes.Paragraph, // can be overridden by attr

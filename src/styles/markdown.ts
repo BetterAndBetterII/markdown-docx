@@ -321,5 +321,18 @@ export const markdown: Record<IMarkdownToken, IMarkdownStyle> = {
     inline: true,
     className: classes.Br,
     // The actual line break will be handled in the rendering code
+  },
+  mathBlock: {
+    className: classes.MathBlock,
+    run: { math: true },
+    paragraph: {
+      spacing: { before: 200, after: 200 },
+      alignment: 'center',
+    },
+  },
+  math: {
+    inline: true,
+    className: classes.Math,
+    run: { math: true },
   }
 }

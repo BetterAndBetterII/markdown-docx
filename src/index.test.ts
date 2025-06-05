@@ -162,4 +162,8 @@ Duplicated footnote reference[^second].
   it('render escape', async () => {
     expect(await renderTest(`\\*literal asterisks\\*`)).toMatchSnapshot()
   })
+
+  it('render math', async () => {
+    expect(await renderTest(`The formula is $E=mc^2$\n\n$$\na^2+b^2=c^2\n$$`)).toMatchSnapshot()
+  })
 })

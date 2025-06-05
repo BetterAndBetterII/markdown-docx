@@ -1265,6 +1265,37 @@ exports[`tokenize > parse list special 1`] = `
 ]
 `;
 
+exports[`tokenize > parse math 1`] = `
+[
+  {
+    "raw": "The formula is $E=mc^2$",
+    "text": "The formula is $E=mc^2$",
+    "tokens": [
+      {
+        "escaped": false,
+        "raw": "The formula is $E=mc^2$",
+        "text": "The formula is $E=mc^2$",
+        "type": "text",
+      },
+    ],
+    "type": "paragraph",
+  },
+  {
+    "raw": "
+
+",
+    "type": "space",
+  },
+  {
+    "raw": "$$
+a^2+b^2=c^2
+$$",
+    "text": "a^2+b^2=c^2",
+    "type": "mathBlock",
+  },
+]
+`;
+
 exports[`tokenize > parse paragraph 1`] = `
 [
   {

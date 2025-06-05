@@ -3,7 +3,7 @@ import {
 } from 'docx'
 import { MarkedOptions, Tokens } from 'marked'
 
-import { Footnote, FootnoteRef } from './extensions'
+import { Footnote, FootnoteRef, MathBlock, Math as MathToken } from './extensions'
 
 export type MarkdownImageType = 'jpg' | 'png' | 'gif' | 'bmp'
 
@@ -58,6 +58,7 @@ export type IBlockToken =
   | Tokens.Text
   // plugin
   | Footnote
+  | MathBlock
 
 export type IInlineToken =
   | Tokens.Escape
@@ -72,6 +73,7 @@ export type IInlineToken =
   | Tokens.Image
   // plugin
   | FootnoteRef
+  | MathToken
 
 export type IParagraphToken =
   | Tokens.Paragraph
@@ -124,9 +126,9 @@ export type Writeable<T> = {
   -readonly [P in keyof T]: T[P]
 }
 
-export type IMarkdownToken = 
+export type IMarkdownToken =
   |'space' | 'code' | 'hr'| 'blockquote'| 'html'| 'def'| 'paragraph'| 'text'| 'footnote'| 'listItem'| 'table'| 'tableHeader'| 'tableCell'| 'heading1'| 'heading2'| 'heading3'| 'heading4'| 'heading5'| 'heading6'
-  | 'tag' | 'link' | 'strong' | 'em' | 'codespan' | 'del' | 'br'
+  | 'tag' | 'link' | 'strong' | 'em' | 'codespan' | 'del' | 'br' | 'mathBlock' | 'math'
 
 export type IMarkdownStyle = {
   inline?: boolean
