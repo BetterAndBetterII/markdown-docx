@@ -73,6 +73,17 @@ exports[`render > render horizontal rules 1`] = `
 <Paragraph style="MdParagraph"><TextRun>Underscores</TextRun></Paragraph>"
 `;
 
+exports[`render > render images 1`] = `
+"<Paragraph style="MdParagraph"><TextRun>Inline-style:
+</TextRun>
+<TextRun>[!alt text](https://img.alicdn.com/imgextra/i3/O1CN012ZjB2y1xHUf6OzZ8C_!!6000000006418-2-tps-104-126.png)</TextRun></Paragraph>
+<Paragraph style="MdSpace"></Paragraph>
+<Paragraph style="MdParagraph"><TextRun>Reference-style:
+</TextRun>
+<TextRun>[!alt text](https://img.alicdn.com/imgextra/i3/O1CN012ZjB2y1xHUf6OzZ8C_!!6000000006418-2-tps-104-126.png)</TextRun></Paragraph>
+<Paragraph style="MdSpace"></Paragraph>"
+`;
+
 exports[`render > render links 1`] = `
 "<Paragraph style="MdParagraph"><ExternalHyperlink link="https://www.google.com"><TextRun style="MdLink">I'm an inline-style link</TextRun></ExternalHyperlink></Paragraph>
 <Paragraph style="MdSpace"></Paragraph>
